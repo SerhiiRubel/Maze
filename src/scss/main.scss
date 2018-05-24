@@ -1,0 +1,108 @@
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+body {
+  background-color: lemonchiffon;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.mazeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+  margin-bottom: 25px;
+}
+
+.cell {
+  cursor: pointer;
+  background-color: bisque;
+  flex: 1;
+  border: 1px solid gray;
+  min-width: 48px;
+  min-height: 48px;
+  transition: opacity .6s;
+}
+
+.cell:hover {
+  opacity: 0.4;
+}
+
+.wall {
+  background-color: black;
+  animation-name: bounceIn;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.path {
+  background-color: lightgreen;
+}
+
+.cell:first-child, .cell:last-child {
+  background-color: goldenrod;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: goldenrod;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+button:last-child {
+  background-color: lightgreen;
+}
